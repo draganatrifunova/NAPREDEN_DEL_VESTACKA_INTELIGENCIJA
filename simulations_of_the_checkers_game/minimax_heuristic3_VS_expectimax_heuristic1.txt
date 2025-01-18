@@ -1,0 +1,1010 @@
+ *** DOBREDOJDOVTE VO IGRATA DAMA ***
+Ova e implementacijata na studentot Dragana Trifunova [223044] za igrata dama i ovde e prikazana amerikanskata verzija od igrata
+Vo Amerikanskata verzija postojat 12 pioncinja na sekoi od protivnicite i vo sekoi red ima po osum kelii
+
+PRAVILA NA IGRANJE
+1. Dokolku sakate da zapocnete so igranje napisete 'start'
+2. Dokolku sakate da prekinete so igranje vo bilo koe vreme pritisnete 'Enter'
+3. Dokolku sakate da se predadete napisete 'surrender'
+4. Koordinatite 'i' i 'j' gi vnesuvate so zapirka pomegu niv bez prazno mesto
+Pred da zapocnete so igrata (pred da napisete 'start') najprvin mora da ja napravite nejzinata konfiguracija.
+
+!!! KONFIGURACIJA !!!
+
+Dali sakate igra covek-algoritam ili pak sakate algoritmite da igraat megu niv 1/2? 
+2
+Expectimax igra so pionceto oznaceno kako #men
+Minimax igra so pionceto oznaceno kako comp
+So koja hevristika ke igra minimax 1/2/3?
+1) Best
+2) Almost King
+3) Edge Position
+3
+So koja hevristika ke igra expectimax 1/2/3?
+1) Best
+2) Almost King
+3) Edge Position
+1
+Vnesete 'start' koga ke se cuvstvuvate podgotveni da pocnete.
+start
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  comp²⁵  ----²⁶  comp²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:0   #men:0
+
+Expectimax e na red
+expectimax: 0.11008715629577637 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  comp²⁵  ----²⁶  comp²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  #men⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:0   #men:0
+            Total expectimax seconds so far: 0.110
+
+Minimax e na red
+minimax: 0.09891414642333984 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  #men⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:0   #men:0
+            Total minimax seconds so far: 0.099
+            Total expectimax seconds so far: 0.110
+
+Expectimax e na red
+expectimax: 0.13731789588928223 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  #men⁴⁵  ----⁴⁶  #men⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:0   #men:0
+            Total minimax seconds so far: 0.099
+            Total expectimax seconds so far: 0.247
+
+Minimax e na red
+minimax: 0.09499669075012207 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  #men⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:1   #men:0
+            Total minimax seconds so far: 0.194
+            Total expectimax seconds so far: 0.247
+
+Expectimax e na red
+expectimax: 0.15436029434204102 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:1   #men:0
+            Total minimax seconds so far: 0.194
+            Total expectimax seconds so far: 0.402
+
+Minimax e na red
+minimax: 0.13591933250427246 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  comp⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:2   #men:0
+            Total minimax seconds so far: 0.330
+            Total expectimax seconds so far: 0.402
+
+Expectimax e na red
+expectimax: 0.13599872589111328 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  comp⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:2   #men:0
+            Total minimax seconds so far: 0.330
+            Total expectimax seconds so far: 0.538
+
+Minimax e na red
+minimax: 0.19600152969360352 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:3   #men:0
+            Total minimax seconds so far: 0.526
+            Total expectimax seconds so far: 0.538
+
+Expectimax e na red
+expectimax: 0.10300064086914062 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:3   #men:0
+            Total minimax seconds so far: 0.526
+            Total expectimax seconds so far: 0.641
+
+Minimax e na red
+minimax: 0.08699941635131836 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  comp³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:3   #men:0
+            Total minimax seconds so far: 0.613
+            Total expectimax seconds so far: 0.641
+
+Expectimax e na red
+expectimax: 0.13208413124084473 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  comp³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  #men⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:3   #men:0
+            Total minimax seconds so far: 0.613
+            Total expectimax seconds so far: 0.773
+
+Minimax e na red
+minimax: 0.13200759887695312 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:4   #men:0
+            Total minimax seconds so far: 0.745
+            Total expectimax seconds so far: 0.773
+
+Expectimax e na red
+expectimax: 0.09190964698791504 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  #men⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:4   #men:0
+            Total minimax seconds so far: 0.745
+            Total expectimax seconds so far: 0.865
+
+Minimax e na red
+minimax: 0.11908793449401855 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  comp³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  #men⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:4   #men:0
+            Total minimax seconds so far: 0.864
+            Total expectimax seconds so far: 0.865
+
+Expectimax e na red
+expectimax: 0.15491080284118652 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  comp³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  #men⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  ----⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:4   #men:0
+            Total minimax seconds so far: 0.864
+            Total expectimax seconds so far: 1.020
+
+Minimax e na red
+minimax: 0.1450967788696289 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  comp³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  #men⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  ----⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:4   #men:0
+            Total minimax seconds so far: 1.009
+            Total expectimax seconds so far: 1.020
+
+Expectimax e na red
+expectimax: 0.20110273361206055 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  comp³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  #men⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:4   #men:0
+            Total minimax seconds so far: 1.009
+            Total expectimax seconds so far: 1.221
+
+Minimax e na red
+minimax: 0.2069094181060791 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  comp³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  #men⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:5   #men:0
+            Total minimax seconds so far: 1.216
+            Total expectimax seconds so far: 1.221
+
+Expectimax e na red
+expectimax: 0.2219984531402588 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  comp³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  #men⁴¹  ----⁴²  #men⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:5   #men:0
+            Total minimax seconds so far: 1.216
+            Total expectimax seconds so far: 1.443
+
+Minimax e na red
+minimax: 0.21503639221191406 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  comp³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  #men⁴¹  ----⁴²  #men⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:5   #men:0
+            Total minimax seconds so far: 1.431
+            Total expectimax seconds so far: 1.443
+
+Expectimax e na red
+expectimax: 0.2689650058746338 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  comp³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  #men⁴¹  ----⁴²  #men⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:5   #men:0
+            Total minimax seconds so far: 1.431
+            Total expectimax seconds so far: 1.712
+
+Minimax e na red
+minimax: 0.23924636840820312 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:6   #men:0
+            Total minimax seconds so far: 1.670
+            Total expectimax seconds so far: 1.712
+
+Expectimax e na red
+expectimax: 0.2590000629425049 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:6   #men:0
+            Total minimax seconds so far: 1.670
+            Total expectimax seconds so far: 1.971
+
+Minimax e na red
+minimax: 0.3081638813018799 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  ----⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:0
+            Total minimax seconds so far: 1.978
+            Total expectimax seconds so far: 1.971
+
+Expectimax e na red
+expectimax: 0.08408617973327637 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  ----⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:0
+            Total minimax seconds so far: 1.978
+            Total expectimax seconds so far: 2.055
+
+Minimax e na red
+minimax: 0.13499999046325684 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  king⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:0
+            Total minimax seconds so far: 2.113
+            Total expectimax seconds so far: 2.055
+
+Expectimax e na red
+expectimax: 0.07091403007507324 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  #men⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  king⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    ----⁷⁰  ----⁷¹  ----⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:1
+            Total minimax seconds so far: 2.113
+            Total expectimax seconds so far: 2.126
+
+Minimax e na red
+minimax: 0.13209247589111328 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  king⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    ----⁷⁰  ----⁷¹  ----⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:9   #men:1
+            Total minimax seconds so far: 2.245
+            Total expectimax seconds so far: 2.126
+
+Expectimax e na red
+expectimax: 0.056912899017333984 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  king⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    ----⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:9   #men:1
+            Total minimax seconds so far: 2.245
+            Total expectimax seconds so far: 2.183
+
+Minimax e na red
+minimax: 0.3137960433959961 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  king⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    ----⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:10   #men:1
+            Total minimax seconds so far: 2.559
+            Total expectimax seconds so far: 2.183
+
+Expectimax e na red
+expectimax: 0.02500128746032715 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  king⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  #men⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    ----⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:10   #men:1
+            Total minimax seconds so far: 2.559
+            Total expectimax seconds so far: 2.208
+
+Minimax e na red
+minimax: 0.14197874069213867 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  king⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  #men⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  king⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    ----⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:10   #men:1
+            Total minimax seconds so far: 2.701
+            Total expectimax seconds so far: 2.208
+
+Expectimax e na red
+expectimax: 0.029999971389770508 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  king⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  king⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    ----⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:10   #men:1
+            Total minimax seconds so far: 2.701
+            Total expectimax seconds so far: 2.238
+
+Minimax e na red
+minimax: 0.37809062004089355 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  king⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  king⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    ----⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:10   #men:1
+            Total minimax seconds so far: 3.079
+            Total expectimax seconds so far: 2.238
+
+Expectimax e na red
+expectimax: 0.05199313163757324 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  #men²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  king⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  king⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    ----⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:10   #men:1
+            Total minimax seconds so far: 3.079
+            Total expectimax seconds so far: 2.290
+
+Minimax e na red
+minimax: 0.29593658447265625 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  king⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  king⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    ----⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:11   #men:1
+            Total minimax seconds so far: 3.375
+            Total expectimax seconds so far: 2.290
+
+Expectimax e na red
+expectimax: 0.01506185531616211 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  king⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  king⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    ----⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:11   #men:1
+            Total minimax seconds so far: 3.375
+            Total expectimax seconds so far: 2.305
+
+Minimax e na red
+minimax: 0.38328051567077637 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  king⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  king⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    ----⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:11   #men:1
+            Total minimax seconds so far: 3.759
+            Total expectimax seconds so far: 2.305
+
+Expectimax e na red
+expectimax: 0.026999950408935547 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  king⁴¹  ----⁴²  ----⁴³  ----⁴⁴  #men⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  king⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    ----⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:11   #men:1
+            Total minimax seconds so far: 3.759
+            Total expectimax seconds so far: 2.332
+
+Minimax e na red
+minimax: 0.33025240898132324 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  king⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  comp⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  king⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    ----⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:12   #men:1
+            Total minimax seconds so far: 4.089
+            Total expectimax seconds so far: 2.332
+POBEDI MINIMAX!!!
+
+Process finished with exit code 0

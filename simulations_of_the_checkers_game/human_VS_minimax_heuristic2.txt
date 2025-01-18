@@ -1,0 +1,2402 @@
+ *** DOBREDOJDOVTE VO IGRATA DAMA ***
+Ova e implementacijata na studentot Dragana Trifunova [223044] za igrata dama i ovde e prikazana amerikanskata verzija od igrata
+Vo Amerikanskata verzija postojat 12 pioncinja na sekoi od protivnicite i vo sekoi red ima po osum kelii
+
+PRAVILA NA IGRANJE
+1. Dokolku sakate da zapocnete so igranje napisete 'start'
+2. Dokolku sakate da prekinete so igranje vo bilo koe vreme pritisnete 'Enter'
+3. Dokolku sakate da se predadete napisete 'surrender'
+4. Koordinatite 'i' i 'j' gi vnesuvate so zapirka pomegu niv bez prazno mesto
+Pred da zapocnete so igrata (pred da napisete 'start') najprvin mora da ja napravite nejzinata konfiguracija.
+
+!!! KONFIGURACIJA !!!
+
+Dali sakate igra covek-algoritam ili pak sakate algoritmite da igraat megu niv 1/2? 
+1
+Vie igrate so pionceto oznaceno kako '#men'
+Mora da izberete so koj algoritam ke igrate. Napisete go imeto na algoritmot minimax/expectimax? 
+minimax
+So koja hevristika ke igrate 1/2/3?
+1) Best
+2) Almost King
+3) Edge Position
+2
+Vnesete 'start' koga ke se cuvstvuvate podgotveni da pocnete.
+start
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  comp²⁵  ----²⁶  comp²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:0   #men:0
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 5,2
+Vnesete na koi koordinati sakate da go pomestite pionceto: 4,3
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  comp²⁵  ----²⁶  comp²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:0   #men:0
+
+Computer e na red
+minimax: 0.11217451095581055 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:0   #men:0
+            Total minimax seconds so far: 0.112
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 6,1
+Vnesete na koi koordinati sakate da go pomestite pionceto: 5,2
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:0   #men:0
+            Total minimax seconds so far: 0.112
+
+Computer e na red
+minimax: 0.11313557624816895 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:0   #men:0
+            Total minimax seconds so far: 0.225
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 5,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 4,7
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  comp²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  #men⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:0   #men:0
+            Total minimax seconds so far: 0.225
+
+Computer e na red
+minimax: 0.13909101486206055 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  #men⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:0   #men:0
+            Total minimax seconds so far: 0.364
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 4,7
+Vnesete na koi koordinati sakate da go pomestite pionceto: 2,5
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  comp¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  #men²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:0   #men:1
+            Total minimax seconds so far: 0.364
+
+Computer e na red
+minimax: 0.11809062957763672 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:1   #men:1
+            Total minimax seconds so far: 0.482
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 4,3
+Vnesete na koi koordinati sakate da go pomestite pionceto: 3,4
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:1   #men:1
+            Total minimax seconds so far: 0.482
+
+Computer e na red
+minimax: 0.14310979843139648 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  comp⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  #men⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:1   #men:1
+            Total minimax seconds so far: 0.626
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 5,2
+Vnesete na koi koordinati sakate da go pomestite pionceto: 4,3
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  comp⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:1   #men:1
+            Total minimax seconds so far: 0.626
+
+Computer e na red
+minimax: 0.1609964370727539 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  comp⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:1   #men:1
+            Total minimax seconds so far: 0.787
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 5,4
+Vnesete na koi koordinati sakate da go pomestite pionceto: 3,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  comp⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:1   #men:2
+            Total minimax seconds so far: 0.787
+
+Computer e na red
+minimax: 0.34409546852111816 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  comp⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:2   #men:2
+            Total minimax seconds so far: 1.131
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 3,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 2,7
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  comp¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  comp⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:2   #men:2
+            Total minimax seconds so far: 1.131
+
+Computer e na red
+minimax: 0.1351604461669922 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  comp²⁵  ----²⁶  #men²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  comp⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  #men⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:2   #men:2
+            Total minimax seconds so far: 1.266
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 6,3
+Vnesete na koi koordinati sakate da go pomestite pionceto: 5,4
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  comp²⁵  ----²⁶  #men²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  comp⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:2   #men:2
+            Total minimax seconds so far: 1.266
+
+Computer e na red
+minimax: 0.32931971549987793 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  comp⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  #men⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:2   #men:2
+            Total minimax seconds so far: 1.595
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 6,5
+Vnesete na koi koordinati sakate da go pomestite pionceto: 5,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  comp⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:2   #men:2
+            Total minimax seconds so far: 1.595
+
+Computer e na red
+minimax: 0.257997989654541 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  #men⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:3   #men:2
+            Total minimax seconds so far: 1.853
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 4,3
+Vnesete na koi koordinati sakate da go pomestite pionceto: 3,4
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:3   #men:2
+            Total minimax seconds so far: 1.853
+
+Computer e na red
+minimax: 0.3150162696838379 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  #men⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:4   #men:2
+            Total minimax seconds so far: 2.168
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 7,4
+Vnesete na koi koordinati sakate da go pomestite pionceto: e
+Nelegalen vlez!
+Vnesete na koi koordinati se naoga pionceto: 7,2
+Vnesete na koi koordinati sakate da go pomestite pionceto: 5,4
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:4   #men:3
+            Total minimax seconds so far: 2.168
+
+Computer e na red
+minimax: 0.19300127029418945 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  comp⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  #men⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:4   #men:3
+            Total minimax seconds so far: 2.361
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 7,4
+Vnesete na koi koordinati sakate da go pomestite pionceto: 5,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  comp³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:4   #men:4
+            Total minimax seconds so far: 2.361
+
+Computer e na red
+minimax: 0.2190093994140625 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  comp⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  #men⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:4   #men:4
+            Total minimax seconds so far: 2.580
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 5,4
+Vnesete na koi koordinati sakate da go pomestite pionceto: 3,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:4   #men:5
+            Total minimax seconds so far: 2.580
+
+Computer e na red
+minimax: 0.13409423828125 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    #men⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:4   #men:5
+            Total minimax seconds so far: 2.714
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 5,0
+Vnesete na koi koordinati sakate da go pomestite pionceto: 3,2
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  #men³²  ----³³  #men³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:4   #men:6
+            Total minimax seconds so far: 2.714
+
+Computer e na red
+minimax: 0.18799734115600586 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:5   #men:6
+            Total minimax seconds so far: 2.902
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 2,7
+Vnesete na koi koordinati sakate da go pomestite pionceto: 1,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  comp⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  #men¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  #men³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:5   #men:6
+            Total minimax seconds so far: 2.902
+
+Computer e na red
+minimax: 0.1400911808013916 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  comp⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.042
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 3,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 2,7
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  comp⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.042
+
+Computer e na red
+minimax: 0.08909273147583008 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.131
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 5,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 4,5
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  #men⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.131
+
+Computer e na red
+minimax: 0.08540010452270508 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  #men⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.217
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 4,5
+Vnesete na koi koordinati sakate da go pomestite pionceto: 3,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.217
+
+Computer e na red
+minimax: 0.0950002670288086 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.312
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 3,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 2,5
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  #men²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.312
+
+Computer e na red
+minimax: 0.10498309135437012 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  #men²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.417
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 2,5
+Vnesete na koi koordinati sakate da go pomestite pionceto: 1,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  #men¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.417
+
+Computer e na red
+minimax: 0.04907536506652832 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  #men¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.466
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 1,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 0,7
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.466
+
+Computer e na red
+minimax: 0.11208438873291016 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.578
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 6,7
+Vnesete na koi koordinati sakate da go pomestite pionceto: 5,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.578
+
+Computer e na red
+minimax: 0.10895323753356934 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.687
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 5,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 4,5
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  #men⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.687
+
+Computer e na red
+minimax: 0.11110472679138184 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  #men⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.798
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 4,5
+Vnesete na koi koordinati sakate da go pomestite pionceto: 3,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.798
+
+Computer e na red
+minimax: 0.11699652671813965 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.915
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 3,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 2,5
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  #men²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 3.915
+
+Computer e na red
+minimax: 0.08625626564025879 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  #men²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 4.001
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 2,5
+Vnesete na koi koordinati sakate da go pomestite pionceto: 1,4
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  comp⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  #men¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:7   #men:6
+            Total minimax seconds so far: 4.001
+
+Computer e na red
+minimax: 0.10609555244445801 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  #men²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.107
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 2,7
+Vnesete na koi koordinati sakate da go pomestite pionceto: 1,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  #men¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  comp²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.107
+
+Computer e na red
+minimax: 0.07709169387817383 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  #men¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  comp³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.185
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 1,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 0,5
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  king⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  comp³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.185
+
+Computer e na red
+minimax: 0.1000823974609375 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  king⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.285
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 0,5
+Vnesete na koi koordinati sakate da go pomestite pionceto: 1,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  king¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.285
+
+Computer e na red
+minimax: 0.08808541297912598 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  king¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.373
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 1,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 2,5
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  king²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.373
+
+Computer e na red
+minimax: 0.1429920196533203 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  king⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  king²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.516
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 0,7
+Vnesete na koi koordinati sakate da go pomestite pionceto: 1,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  comp⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  king¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  king²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.516
+
+Computer e na red
+minimax: 0.06509923934936523 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  king¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  king²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.581
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 2,5
+Vnesete na koi koordinati sakate da go pomestite pionceto: 3,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  comp¹²  ----¹³  ----¹⁴  ----¹⁵  king¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  king³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.581
+
+Computer e na red
+minimax: 0.05699777603149414 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  king¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  king³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.638
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 1,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 2,5
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  king²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  king³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.638
+
+Computer e na red
+minimax: 0.056099891662597656 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  king²⁵  ----²⁶  ----²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  king³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.694
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 3,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 4,5
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  king²⁵  ----²⁶  ----²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  king⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.694
+
+Computer e na red
+minimax: 0.053090810775756836 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  king²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  king⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.747
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 2,5
+Vnesete na koi koordinati sakate da go pomestite pionceto: 3,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  king³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  king⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.747
+
+Computer e na red
+minimax: 0.048096418380737305 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  king³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  king⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.795
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 3,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 4,7
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  king⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.795
+
+Computer e na red
+minimax: 0.05208992958068848 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  king⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.847
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 4,5
+Vnesete na koi koordinati sakate da go pomestite pionceto: 5,5
+Ne mozete da napravete takvo dvizenje
+Vnesete na koi koordinati se naoga pionceto: 4,5
+Vnesete na koi koordinati sakate da go pomestite pionceto: 5,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  comp⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  king⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.847
+
+Computer e na red
+minimax: 0.013007164001464844 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  king⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.860
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 5,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 6,5
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    comp¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  comp⁶³  ----⁶⁴  king⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.860
+
+Computer e na red
+minimax: 0.010096311569213867 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  comp⁶³  ----⁶⁴  king⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.870
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 4,7
+Vnesete na koi koordinati sakate da go pomestite pionceto: 5,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  comp²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  king⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  comp⁶³  ----⁶⁴  king⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.870
+
+Computer e na red
+minimax: 0.006997108459472656 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  king⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  comp⁶³  ----⁶⁴  king⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.877
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 6,5
+Vnesete na koi koordinati sakate da go pomestite pionceto: 5,4
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    comp³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  king⁵⁴  ----⁵⁵  king⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.877
+
+Computer e na red
+minimax: 0.0169985294342041 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  king⁵⁴  ----⁵⁵  king⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.894
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 5,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 6,5
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  king⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  comp⁶³  ----⁶⁴  king⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:8   #men:6
+            Total minimax seconds so far: 4.894
+
+Computer e na red
+minimax: 0.009096384048461914 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  king⁵⁴  ----⁵⁵  king⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  #men⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:9   #men:6
+            Total minimax seconds so far: 4.903
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 7,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 6,7
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  king⁵⁴  ----⁵⁵  king⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:9   #men:6
+            Total minimax seconds so far: 4.903
+
+Computer e na red
+minimax: 0.02408742904663086 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  king⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  comp⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:9   #men:6
+            Total minimax seconds so far: 4.927
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 5,4
+Vnesete na koi koordinati sakate da go pomestite pionceto: 6,5
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  comp⁶³  ----⁶⁴  king⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:9   #men:6
+            Total minimax seconds so far: 4.927
+
+Computer e na red
+minimax: 0.01506948471069336 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  ----⁶³  ----⁶⁴  king⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:9   #men:6
+            Total minimax seconds so far: 4.943
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 6,5
+Vnesete na koi koordinati sakate da go pomestite pionceto: 7,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  comp⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    ----⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  king⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:9   #men:6
+            Total minimax seconds so far: 4.943
+
+Computer e na red
+minimax: 0.03008413314819336 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  #men⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  king⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:9   #men:6
+            Total minimax seconds so far: 4.973
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 6,7
+Vnesete na koi koordinati sakate da go pomestite pionceto: 5,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  ----⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  king⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:9   #men:6
+            Total minimax seconds so far: 4.973
+
+Computer e na red
+minimax: 0.025998830795288086 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  #men⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  king⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  king⁷⁴  ----⁷⁵  king⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:9   #men:6
+            Total minimax seconds so far: 4.999
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 5,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 4,5
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  #men⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  comp⁶¹  ----⁶²  king⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  ----⁷²  ----⁷³  king⁷⁴  ----⁷⁵  king⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:9   #men:6
+            Total minimax seconds so far: 4.999
+
+Computer e na red
+minimax: 0.034981727600097656 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  #men⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  king⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    #men⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  king⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:9   #men:6
+            Total minimax seconds so far: 5.034
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 7,0
+Vnesete na koi koordinati sakate da go pomestite pionceto: 6,1
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  #men⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  comp⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  #men⁶¹  ----⁶²  king⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    ----⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  king⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:9   #men:6
+            Total minimax seconds so far: 5.034
+
+Computer e na red
+minimax: 0.042090415954589844 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  #men⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  king⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    king⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  king⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:10   #men:6
+            Total minimax seconds so far: 5.076
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 7,6
+Vnesete na koi koordinati sakate da go pomestite pionceto: 6,5
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  #men⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  ----⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  king⁶³  ----⁶⁴  king⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    king⁷⁰  ----⁷¹  king⁷²  ----⁷³  king⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:10   #men:6
+            Total minimax seconds so far: 5.076
+
+Computer e na red
+minimax: 0.08109188079833984 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  #men⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  king⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  king⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    king⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:11   #men:6
+            Total minimax seconds so far: 5.157
+
+Vie #men ste na red
+Vnesete na koi koordinati se naoga pionceto: 4,5
+Vnesete na koi koordinati sakate da go pomestite pionceto: 3,6
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  ----²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  #men³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  king⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  king⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  king⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    king⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:11   #men:6
+            Total minimax seconds so far: 5.157
+
+Computer e na red
+minimax: 0.04408407211303711 sekundi
+       0       1       2       3       4       5       6       7
+
+0    ----⁰⁰  ----⁰¹  ----⁰²  ----⁰³  ----⁰⁴  ----⁰⁵  ----⁰⁶  ----⁰⁷  
+
+1    ----¹⁰  ----¹¹  ----¹²  ----¹³  ----¹⁴  ----¹⁵  ----¹⁶  ----¹⁷  
+
+2    ----²⁰  ----²¹  ----²²  ----²³  ----²⁴  king²⁵  ----²⁶  ----²⁷  
+
+3    ----³⁰  ----³¹  ----³²  ----³³  ----³⁴  ----³⁵  ----³⁶  ----³⁷  
+
+4    ----⁴⁰  ----⁴¹  ----⁴²  ----⁴³  ----⁴⁴  ----⁴⁵  ----⁴⁶  ----⁴⁷  
+
+5    comp⁵⁰  ----⁵¹  ----⁵²  ----⁵³  ----⁵⁴  ----⁵⁵  king⁵⁶  ----⁵⁷  
+
+6    ----⁶⁰  ----⁶¹  ----⁶²  king⁶³  ----⁶⁴  ----⁶⁵  ----⁶⁶  ----⁶⁷  
+
+7    king⁷⁰  ----⁷¹  king⁷²  ----⁷³  ----⁷⁴  ----⁷⁵  ----⁷⁶  ----⁷⁷  
+
+                    SCORE:   comp:12   #men:6
+            Total minimax seconds so far: 5.201
+IZGUBIVTE!!!
+
+Process finished with exit code 0
