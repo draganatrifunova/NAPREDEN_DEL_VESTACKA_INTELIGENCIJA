@@ -1,0 +1,13 @@
+id,"win(0-no, 1-yes)",expectimax_score,opponent_score,draws,duration(sec)
+human_expectimax1,0,9,12,90,4.706
+human_expectimax2,0,7,12,48,4.962
+human_expectimax3,1,12,8,51,4.199
+minimax1_expectimax1 ,0,2,11,39,2.065
+minimax1_expectimax2 ,0,1,12,31,2.105
+minimax1_expectimax3 ,0,1,11,37,2.812
+minimax2_expectimax1,0,1,12,35,1.597
+minimax2_expectimax2 ,0,0,11,43,2.504
+minimax2_expectimax3,0,1,12,35,2.267
+minimax3_expectimax1,0,1,12,41,2.332
+minimax3_expectimax2 ,0,1,12,41,2.959
+minimax3_expectimax3 ,0,1,10,37,3.119

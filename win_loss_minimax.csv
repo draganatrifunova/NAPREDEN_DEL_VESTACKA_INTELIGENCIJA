@@ -1,0 +1,13 @@
+id,"win(0-no, 1-yes)",minimax_socre,opponent_score,draws,duration(sec)
+human_minimax1,1,12,9,79,3.021
+human_minimax2,1,12,6,101,5.201
+human_minimax3,1,10,7,87,6.864
+minimax1_expectimax1,1,11,2,39,2.395
+minimax1_expectimax2,1,12,1,31,1.865
+minimax1_expectimax3,1,11,1,37,2.835
+minimax2_expectimax1,1,12,1,35,3.089
+minimax2_expectimax2,1,11,0,43,3.11
+minimax2_expectimax3,1,12,1,35,3.179
+minimax3_expectimax1,1,12,1,41,4.089
+minimax3_expectimax2,1,12,1,41,3.811
+minimax3_expectimax3,1,10,1,37,4.254
